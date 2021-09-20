@@ -5,7 +5,6 @@ const Search = () => {
   const [term, setTerm] = useState('');
   const [results, setResults] = useState([])
 
-
   useEffect(()=> {
     const search = async() => {
       const  { data }  = await axios.get('https://en.wikipedia.org/w/api.php', {
@@ -27,14 +26,24 @@ const Search = () => {
   }, [term]);
 
   const renderedResults =results.map((result) => {
-    return <div key={ result.pageid } className="item">
-      <div className="content">
-        <div className="header">
-          { result.title }
+    return(
+      <div key={ result.pageid } className="item">
+        <div className="right floated content">
+          <a
+            href={`https://en.wikipedia.org?curid=${result.pageid}`}
+            className="ui button"
+          >
+            Go
+          </a>
         </div>
-        <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
+        <div className="content">
+          <div className="header">
+            { result.title }
+          </div>
+          <span dangerouslySetInnerHTML={{ __html: result.snippet }}></span>
+        </div>
       </div>
-    </div>
+    )
   });
 
 
