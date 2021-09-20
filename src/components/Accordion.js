@@ -1,4 +1,4 @@
-import react from 'react';
+import React from 'react';
 
 const Accordion = (props) => {
   const { items } = props;
