@@ -20,6 +20,7 @@ export default () => {
   return (
     <div>
       <h1>Hi from App</h1>
+      <br/>
       <Accordion items={items} />
     </div>
     )
