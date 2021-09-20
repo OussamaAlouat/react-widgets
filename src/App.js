@@ -1,6 +1,6 @@
 import React from 'react';
 import Accordion from './components/Accordion';
-
+import Search from './components/Search'
 const items = [
   {
     title: 'What is React ?',
@@ -19,9 +19,7 @@ const items = [
 export default () => {
   return (
     <div>
-      <h1>Hi from App</h1>
-      <br/>
-      <Accordion items={items} />
+      <Search />
     </div>
     )
 }
