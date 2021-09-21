@@ -7,13 +7,19 @@ const Dropdown = (props) => {
   const reference = useRef();
 
   useEffect(() => {
-    document.body.addEventListener('click', (event) => {
+    const onBodyClick = (event) => {
       if(reference.current.contains(event.target)) {
         return;
       }
 
       setOpen(false)
-    }, { capture: true })
+    };
+
+    document.body.addEventListener('click', onBodyClick, { capture: true })
+
+    return () => {
+      document.body.removeEventListener('click', onBodyClick);
+    };
   }, []);
 
   const renderedOptions = options.map((option) => {
