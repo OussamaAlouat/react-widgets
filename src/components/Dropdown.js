@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 
 const Dropdown = (props) => {
   const [ open, setOpen ] = useState(false);
-  const { options, selected, onSelectedChange } = props;
+  const { options, selected, onSelectedChange, label } = props;
   const reference = useRef();
 
   useEffect(() => {
@@ -44,7 +44,7 @@ const Dropdown = (props) => {
   return (
     <div className="ui form" ref={reference}>
       <div className="field">
-        <label className="label">Select a color</label>
+        <label className="label">{label}</label>
         <div
           onClick={ () => setOpen(!open) }
           className={`ui selection dropdown ${active}`}
