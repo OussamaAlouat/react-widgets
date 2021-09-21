@@ -6,7 +6,7 @@ const googleKey = 'AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM';
 const Convert = (props) => {
   const { language, text } = props;
   const [translated, setTranslated] = useState('');
-  const [debouncedText, setDebouncedText] = useState(translated);
+  const [debouncedText, setDebouncedText] = useState(text);
 
   useEffect(() => {
     const timerId = setTimeout(() => {
