@@ -33,7 +33,7 @@ const options = [
   }
 ];
 
-export default () => {
+ const App =  () => {
   const [selected, setSelected] = useState(options[0]);
 
   return (
@@ -44,5 +44,6 @@ export default () => {
         onSelectedChange={setSelected}
       />
     </div>
-    )
+  )
 }
+export default App;
